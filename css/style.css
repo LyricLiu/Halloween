@@ -50,18 +50,20 @@
     z-index: 666;
 }
 
-#map-container{
-    overflow: hidden;
-    position: absolute;
-    top:65px;
-    left:20px;
-    width: 740px;
-    height: 548px;
-    background: url(../imgs/mapbg.png);
-    background-size: cover;
+#mapbg-father{
+    height:100%;
+    width:100%;
 }
 
 #mapbg{
+    overflow: hidden;
+    margin: 50px 20px 0 0;
+    width: 740px;
+    height: 548px;
+    background: url(../imgs/mapbg.png);
+}
+
+#map-container{
     background-color: #0c142a;
     position: fixed;
     width:100%;
@@ -75,18 +77,18 @@
 }
 
 #urhere {
-    width: 6px;
-    height: 6px;
-    background: #f00;
-    animation: urhere-flash 1s infinite ease-in-out alternate;
-    box-shadow: 0 0 8px 5px rgba(255, 0, 0, 0.6);
+    width: 23px;
+    height: 23px;
+    background: url(../imgs/urhere.png);
+    animation: urhere-flash 1.5s infinite ease-in-out alternate;
+    box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.2);
 }
 
 .points-ghosts {
     width: 6px;
     height: 6px;
-    background: #ff0;
-    animation: ghosts-flash 1s infinite ease-in-out alternate;
+    background: #f1aa55;
+    animation: ghosts-flash 1.5s infinite ease-in-out alternate;
 }
 
 .points-ghosts[ghost-found] {
@@ -96,16 +98,16 @@
 
 @keyframes urhere-flash {
     from {
-        box-shadow: 0 0 8px 5px rgba(255, 0, 0, 0.8);
+        box-shadow: 0 0 8px 22px rgba(255, 255, 255, 0.1);
     }
     to {
-        box-shadow: 0 0 8px 2px rgba(255, 0, 0, 0.2);
+        box-shadow: 0 0 8px 15px rgba(255, 255, 255, 0.04);
     }
 }
 
 @keyframes ghosts-flash {
     from {
-        box-shadow: 0 0 8px 5px rgba(255, 255, 0, 0.8);
+        box-shadow: 0 0 8px 5px rgba(255, 255, 0, 0.3);
     }
     to {
         box-shadow: 0 0 8px 2px rgba(255, 255, 0, 0.2);
