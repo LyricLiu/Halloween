@@ -3,72 +3,75 @@
     padding: 0;
 }
 
-#navigator{
-    position:fixed;
-    width:375px;
-    height:66px;
+#navigator {
+    position: fixed;
+    width: 375px;
+    height: 66px;
     z-index: 66666;
     background: url(../imgs/navigator.png);
-    bottom:0;
+    bottom: 0;
 }
 
-#gtmap{
-    position:fixed;
-    bottom:16px;
-    left:35px;
+#gtmap {
+    position: absolute;
+    bottom: 18px;
+    left: 35px;
     background: url(../imgs/gtmap.png);
-    width:50px;
-    height:20px;
+    width: 50px;
+    height: 20px;
 }
 
-#haunt{
-    position:fixed;
-    bottom:16px;
-    left:164px;
+#haunt {
+    position: absolute;
+    bottom: 18px;
+    left: 164px;
     background: url(../imgs/haunt.png);
-    width:48px;
-    height:20px;
+    width: 48px;
+    height: 20px;
 }
 
-#collection{
-    position:fixed;
-    bottom:17px;
-    left:280px;
+#collection {
+    position: absolute;
+    bottom: 19px;
+    left: 280px;
     background: url(../imgs/collection.png);
-    width:67px;
-    height:20px;
+    width: 67px;
+    height: 20px;
 }
+
 
 /* map module*/
 
-#map-header{
-    position:fixed;
-    top:0;
+#map{
+    height:577px;
+    background:#0c142a;
+    width:100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+#map-header {
+    position: fixed;
+    top: 0;
     background: url(../imgs/mapheader.png);
-    width:375px;
-    height:77px;
+    width: 375px;
+    height: 77px;
     z-index: 666;
 }
 
-#mapbg-father{
-    height:100%;
-    width:100%;
+#mapbg-father {
+    height: 100%;
+    width: 100%;
 }
 
-#mapbg{
-    overflow: hidden;
-    margin: 50px 20px 0 0;
-    width: 740px;
-    height: 548px;
-    background: url(../imgs/mapbg.png);
-}
-
-#map-container{
-    background-color: #0c142a;
-    position: fixed;
-    width:100%;
-    height:100%;
-    z-index: -666666;
+#map-container {
+    background: url(../imgs/mapbg.png) #0c142a;
+    position: relative;
+    top:60px;
+    left:12px;
+    background-size: cover;
+    width: 666px;
+    height: 493px;
 }
 
 .points {
