@@ -15,7 +15,6 @@
     <script src="./third-party/aframe-look-at-component.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <div id="navigator">
         <span id="gtmap"></span>
@@ -63,7 +62,41 @@
     </div>
 <!-- Haunt module -->
     <div id="hauntpart">
-        
+        <ar-scene id="aframe">
+            <a-assets>
+                <a-asset-item id="skeleton1" src="./3Dmodel/ItemModel/skeleton1.obj"></a-asset-item>
+                <a-asset-item id="skeleton1" src="./3Dmodel/ItemModel/skeleton1.mtl"></a-asset-item>
+                <a-asset-item id="skeleton2" src="./3Dmodel/ItemModel/skeleton2.obj"></a-asset-item>
+                <a-asset-item id="skeleton2" src="./3Dmodel/ItemModel/skeleton2.mtl"></a-asset-item>
+                <a-asset-item id="zombie1" src="./3Dmodel/ItemModel/zombie1.obj"></a-asset-item>
+                <a-asset-item id="zombie1" src="./3Dmodel/ItemModel/zombie1.mtl"></a-asset-item>
+                <a-asset-item id="zombie2" src="./3Dmodel/ItemModel/zombie2.obj"></a-asset-item>
+                <a-asset-item id="zombie2" src="./3Dmodel/ItemModel/zombie2.mtl"></a-asset-item>
+                <a-asset-item id="ghost1" src="./3Dmodel/ItemModel/ghost1.obj"></a-asset-item>
+                <a-asset-item id="ghost1" src="./3Dmodel/ItemModel/ghost1.mtl"></a-asset-item>
+                <a-asset-item id="ghost2" src="./3Dmodel/ItemModel/ghost2.obj"></a-asset-item>
+                <a-asset-item id="ghost2" src="./3Dmodel/ItemModel/ghost2.mtl"></a-asset-item>
+                <a-asset-item id="vampire1" src="./3Dmodel/ItemModel/vampire1.obj"></a-asset-item>
+                <a-asset-item id="vampire1" src="./3Dmodel/ItemModel/vampire1.mtl"></a-asset-item>
+                <a-asset-item id="vampire2" src="./3Dmodel/ItemModel/vampire2.obj"></a-asset-item>
+                <a-asset-item id="vampire2" src="./3Dmodel/ItemModel/vampire2.mtl"></a-asset-item>
+                <a-asset-item id="witch1" src="./3Dmodel/ItemModel/witch1.obj"></a-asset-item>
+                <a-asset-item id="witch1" src="./3Dmodel/ItemModel/witch1.mtl"></a-asset-item>
+                <a-asset-item id="witch2" src="./3Dmodel/ItemModel/witch2.obj"></a-asset-item>
+                <a-asset-item id="witch2" src="./3Dmodel/ItemModel/witch2.mtl"></a-asset-item>
+            </a-assets>
+            <!--###-->
+            <ar-geopose id="GT" lla=" -84.408068 33.781693" userposition="true" userotation="false">
+                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/skeleton1.obj); mtl: url(./3Dmodel/ItemModel/skeleton1.mtl)" scale="10 10 10" position="0 1 0" rotation="0 -90 0">
+                    <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
+                </a-entity>
+            </ar-geopose>
+            <a-camera>
+                <a-cursor id="cursor">
+                    <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                </a-cursor>
+            </a-camera>
+        </ar-scene>
     </div>
     <script src="./script/storage.js"></script>
     <script src="./script/main.js"></script>
