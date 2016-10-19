@@ -90,3 +90,26 @@ function collectPartChange(id, part, src){
 
 collectPartChange("co-witch", "left", "../imgs/collection/witch1.png");
 collectPartChange("co-witch", "right", "../imgs/collection/witch2.png");
+
+//navigator click function
+var mappart = getId('map');
+var collectionpart = getId('collectionpart');
+var hauntpart = getId('hauntpart');
+
+function gtmapClick(){
+    mappart.style.display = "block";
+    collectionpart.style.display = "none";
+    hauntpart.style.display = "none";
+}
+
+function hauntClick(){
+    mappart.style.display = "none";
+    collectionpart.style.display = "none";
+    hauntpart.style.display = "block";
+}
+
+function collectionClick(){
+    mappart.style.display = "none";
+    collectionpart.style.display = "block";
+    hauntpart.style.display = "none";
+}

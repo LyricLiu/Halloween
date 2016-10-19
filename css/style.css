@@ -48,6 +48,7 @@
     width:100%;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
+    z-index: 6666;
     display:none; /*change here*/
 }
 
@@ -131,6 +132,7 @@
 
 #collectionpart{
     background-color: #0c142a;
+    z-index: 6666;
     display: none;/*change here*/
 }
 
@@ -250,4 +252,9 @@
 
 #co-zombie span:nth-child(3){
     background: url(../imgs/collection/zombieb.png);
+}
+
+/***********huant**************/
+#hauntpart{
+    display:block;
 }

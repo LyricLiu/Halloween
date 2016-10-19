@@ -17,9 +17,9 @@
 </head>
 <body>
     <div id="navigator">
-        <span id="gtmap"></span>
-        <span id="haunt"></span>
-        <span id="collection"></span>
+        <span id="gtmap" onclick="gtmapClick()"></span>
+        <span id="haunt" onclick="hauntClick()"></span>
+        <span id="collection" onclick="collectionClick()"></span>
     </div>
 <!-- GT map module -->
     <div id="map">
@@ -91,11 +91,11 @@
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <a-camera>
+            <ar-camera>
                 <a-cursor id="cursor">
                     <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
                 </a-cursor>
-            </a-camera>
+            </ar-camera>
         </ar-scene>
     </div>
     <script src="./script/storage.js"></script>
