@@ -131,6 +131,7 @@
 
 #collectionpart{
     background-color: #0c142a;
+    display: none;/*change here*/
 }
 
 #collection-header{
