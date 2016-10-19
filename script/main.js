@@ -73,3 +73,18 @@ getGhostData(ghostDataAddr, function (myGhostData) {
     ghostData = myGhostData;
     renderMap(myGhostData);
 });
+
+//collection part, picture change
+function collectPartChange(id, part, src){
+    var collectman = document.getElementById(id);
+    if(part == "left"){
+        var collectpart = collectman.children[0];
+        collectpart.style.background = "url(" + src + ")";
+    }else{
+        var collectpart = collectman.children[1];
+        collectpart.style.background = "url(" + src + ")";
+    }
+}
+
+collectPartChange("co-witch", "left", "../imgs/collection/witch1.png");
+collectPartChange("co-witch", "right", "../imgs/collection/witch2.png");
