@@ -48,6 +48,7 @@
     width:100%;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
+    display:none; /*change here*/
 }
 
 #map-header {
@@ -124,4 +125,128 @@
     to {
         box-shadow: 0 0 8px 2px rgba(0, 255, 0, 0.2);
     }
+}
+
+/*************collection**************/
+
+#collectionpart{
+    background-color: #0c142a;
+}
+
+#collection-header{
+    position: fixed;
+    top: 0;
+    background: url(../imgs/coheader.png);
+    width: 375px;
+    height: 77px;
+    z-index: 666;
+}
+
+#co-display{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.co-bar{
+    background: url(../imgs/collection/collectionline.png);
+    position: relative;
+    width:375px;
+    height:140px;
+}
+
+.co-left{
+    margin:25px 60px 25px 20px;
+    position: absolute;
+    width:89px;
+    height:89px;
+}
+
+.co-mid{
+    margin:25px 60px 25px 140px;
+    position: absolute;
+    width:89px;
+    height:89px;
+}
+
+.co-right{
+    margin:10px 10px 0 265px;
+    position: absolute;
+    width:76px;
+    height:120px;
+}
+
+#co-witch span:nth-child(1){
+    background: url(../imgs/collection/witch1b.png);
+}
+
+#co-witch span:nth-child(2){
+    background: url(../imgs/collection/witch2b.png);
+}
+
+#co-witch span:nth-child(3){
+    background: url(../imgs/collection/witchb.png);
+}
+
+#co-skeleton{
+    position: relative;
+}
+
+#co-skeleton span:nth-child(1){
+    background: url(../imgs/collection/skeleton1b.png);
+}
+
+#co-skeleton span:nth-child(2){
+    background: url(../imgs/collection/skeleton2b.png);
+}
+
+#co-skeleton span:nth-child(3){
+    background: url(../imgs/collection/skeletonb.png);
+}
+
+#co-vampire{
+    position: relative;
+}
+
+#co-vampire span:nth-child(1){
+    background: url(../imgs/collection/vampire1b.png);
+}
+
+#co-vampire span:nth-child(2){
+    background: url(../imgs/collection/vampire2b.png);
+}
+
+#co-vampire span:nth-child(3){
+    background: url(../imgs/collection/vampireb.png);
+}
+
+#co-ghost{
+    position: relative;
+}
+
+#co-ghost span:nth-child(1){
+    background: url(../imgs/collection/ghost1b.png);
+}
+
+#co-ghost span:nth-child(2){
+    background: url(../imgs/collection/ghost2b.png);
+}
+
+#co-ghost span:nth-child(3){
+    background: url(../imgs/collection/ghostb.png);
+}
+
+#co-zombie{
+    position: relative;
+}
+
+#co-zombie span:nth-child(1){
+    background: url(../imgs/collection/zombie1b.png);
+}
+
+#co-zombie span:nth-child(2){
+    background: url(../imgs/collection/zombie2b.png);
+}
+
+#co-zombie span:nth-child(3){
+    background: url(../imgs/collection/zombieb.png);
 }
