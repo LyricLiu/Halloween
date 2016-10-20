@@ -26,4 +26,8 @@
     "id": "map7",
     "pos": [100, 60],
     "found": false
+}, {
+    "id": "map8",
+    "pos": [100, 60],
+    "found": false
 }]

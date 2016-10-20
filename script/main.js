@@ -1,7 +1,9 @@
 'use strict';
 
 var ghostData = [];
-var ghostDataAddr = '../data/ghostdata.json';
+var mapData = [];
+var ghostDataAddr = './data/ghostdata.json';
+var mapDataAddr = './data/mapdata.json';
 
 /**
  * A shorter way to get elements by ID
@@ -18,7 +20,7 @@ function getId(selector) {
  * 
  * @param {any} myGhostData the data of the ghosts
  */
-function renderMap(myGhostData) {
+function renderGhost(myGhostData) {
     var myMap = getId('map-container');
     myGhostData.forEach(function (curVar, index, array) {
         myMap.innerHTML += '<div id="' + curVar.id +
@@ -29,6 +31,19 @@ function renderMap(myGhostData) {
             ' ></div>';
     });
 }
+/*
+function renderMap(mapData){
+    var myMap = getId('map-container');
+    mapData.forEach(function (curVar, index, array) {
+        myMap.innerHTML += '<div id="' + curVar.id +
+            '" class="mapmodule" style="top: ' + curVar.pos[0] +
+            'px; left: ' + curVar.pos[1] +
+            'px;" map-index="' + index +
+            '" ' + (curVar.found ? 'map-found' : '') +
+            ' ></div>';
+    });
+}
+*/
 
 /**
  * Get ghost data via localStorage or ajax
@@ -53,7 +68,25 @@ function getGhostData(srcAddr, success) {
         xhr.send();
     }
 }
-
+/*
+function getMapData(srcAddr, success) {
+    var myMapData = null;
+    if (myMapData = storage1.get('mapData')) {
+        success.call(this, mapData);
+    } else {
+        var xhr = new XMLHttpRequest;
+        xhr.open('GET', srcAddr);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                mapData = xhr.responseText;
+                storage1.set('mapData', mapData);
+                success.call(this, mapData);
+            }
+        };
+        xhr.send();
+    }
+}
+*/
 /**
  * Change particular ghost to the status of "found"
  * 
@@ -71,10 +104,24 @@ function setFound(id) {
 getGhostData(ghostDataAddr, function (myGhostData) {
     myGhostData = JSON.parse(myGhostData);
     ghostData = myGhostData;
-    renderMap(myGhostData);
+    renderGhost(myGhostData);
 });
+/*
+getMapData(mapDataAddr, function (mapData) {
+    mapData = JSON.parse(mapData);
+    mapData = mapData;
+    renderMap(mapData);
+});
+*/
 
-//collection part, picture change
+
+
+
+/**
+ * Change pictures of  "collection"
+ * 
+ * @param {any} id the ID of the character which you want to change the status
+ */
 function collectPartChange(id, part, src){
     var collectman = document.getElementById(id);
     if(part == "left"){
@@ -88,8 +135,8 @@ function collectPartChange(id, part, src){
 }
 
 
-collectPartChange("co-witch", "left", "../imgs/collection/witch1.png");
-collectPartChange("co-witch", "right", "../imgs/collection/witch2.png");
+collectPartChange("co-witch", "left", "./imgs/collection/witch1.png");
+collectPartChange("co-witch", "right", "./imgs/collection/witch2.png");
 
 //navigator click function
 var mappart = getId('map');
