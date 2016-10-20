@@ -312,11 +312,11 @@
 /***********huant**************/
 
 .cursorE{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     z-index: 6666;
-    margin: -39.5px 0 0 -39.5px;;
+    margin: -39px 0 0 -39px;;
 }
 
 #hauntpart{
