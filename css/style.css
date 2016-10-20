@@ -129,48 +129,56 @@
 }
 
 #map1{
+    position: absolute;
     background: url(../imgs/map/map1.png);
     width: 228px;
     height: 114px;
 }
 
 #map2{
+    position: absolute;
     background: url(../imgs/map/map2.png);
     width: 190px;
     height: 239px;
 }
 
 #map3{
+    position: absolute;
     background: url(../imgs/map/map3.png);
     width: 163px;
     height: 228px;
 }
 
 #map4{
+    position: absolute;
     background: url(../imgs/map/map4.png);
     width: 180px;
     height: 179px;
 }
 
 #map5{
+    position: absolute;
     background: url(../imgs/map/map5.png);
     width: 152px;
     height: 168px;
 }
 
 #map6{
+    position: absolute;
     background: url(../imgs/map/map6.png);
     width: 196px;
     height: 195px;
 }
 
 #map7{
+    position: absolute;
     background: url(../imgs/map/map7.png);
     width: 152px;
     height: 272px;
 }
 
 #map8{
+    position: absolute;
     background: url(../imgs/map/map8.png);
     width: 158px;
     height: 131px;
@@ -302,6 +310,15 @@
 }
 
 /***********huant**************/
+
+.cursorE{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6666;
+    margin: -39.5px 0 0 -39.5px;;
+}
+
 #hauntpart{
     display:block;
 }

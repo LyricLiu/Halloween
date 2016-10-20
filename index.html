@@ -62,6 +62,10 @@
     </div>
 <!-- Haunt module -->
     <div id="hauntpart">
+        <img id="cursor-inner" class="cursorE" src="./imgs/cursor/cursor-inner.png" scale="0.3 0.3 0.3"></img>
+        <img id="cursor-ring" class="cursorE" src="./imgs/cursor/cursor-ring.png" scale="0.3 0.3 0.3"></img>
+        <img id="cursor-outer1" class="cursorE" src="./imgs/cursor/cursor-outer1.png" scale="0.3 0.3 0.3"></img>
+        <img id="cursor-outer2" class="cursorE" src="./imgs/cursor/cursor-outer2.png" scale="0.3 0.3 0.3"></img>
         <ar-scene id="aframe">
             <a-assets>
                 <a-asset-item id="skeleton1" src="./3Dmodel/ItemModel/skeleton1.obj"></a-asset-item>
@@ -93,6 +97,7 @@
             </ar-geopose>
             <ar-camera>
                 <a-cursor id="cursor">
+                <a-image src="./imgs/cursor/cursor-shot.png" scale="0.2 0.2 0.2"></a-image>
                     <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
                 </a-cursor>
             </ar-camera>
