@@ -49,7 +49,7 @@
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
     z-index: 6666;
-    display:block; /*change here*/
+    display:none; /*change here*/
 }
 
 #map-header {
@@ -134,7 +134,7 @@
     background: url(../imgs/map/map1.png);
     width: 228px;
     height: 114px;
-    opacity: 0.3;
+    opacity: 0.5;
     left:-20px;
     top:-28px;
 }
@@ -341,9 +341,40 @@
     top: 50%;
     left: 50%;
     z-index: 6666;
-    margin: -40px 0 0 -40px;;
+    margin: -54px 0 0 -45px;;
 }
 
 #hauntpart{
-    display:none;
+    display:block;
+}
+
+#cursor-inner{
+    animation: rotate 3s infinite ease-in-out alternate;
+}
+
+#cursor-ring{
+    animation: rotate 4s infinite linear;
+}
+
+#cursor-outer1{
+    animation: rotate-apart 2s infinite ease-in-out alternate;
+}
+
+#cursor-outer2{
+    animation: rotate-bpart 1.5s infinite ease-in-out alternate;
+}
+
+@keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes rotate-apart {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(220deg);}
+}
+
+@keyframes rotate-bpart {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(300deg);}
 }
