@@ -102,12 +102,14 @@ function setFound(id) {
 
 // Entry
 getGhostData(ghostDataAddr, function (myGhostData) {
-    ghostData = JSON.parse(myGhostData);
+    myGhostData = JSON.parse(myGhostData);
+    ghostData = myGhostData;
     renderGhost(myGhostData);
 });
 /*
 getMapData(mapDataAddr, function (mapData) {
     mapData = JSON.parse(mapData);
+    mapData = mapData;
     renderMap(mapData);
 });
 */
