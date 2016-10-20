@@ -102,8 +102,7 @@ function setFound(id) {
 
 // Entry
 getGhostData(ghostDataAddr, function (myGhostData) {
-    myGhostData = JSON.parse(myGhostData);
-    ghostData = myGhostData;
+    ghostData = JSON.parse(myGhostData);
     renderGhost(myGhostData);
 });
 /*
