@@ -341,7 +341,7 @@
     top: 50%;
     left: 50%;
     z-index: 6666;
-    margin: -54px 0 0 -45px;;
+    margin: -54px 0 0 -45px;
 }
 
 #hauntpart{
@@ -377,4 +377,27 @@
 @keyframes rotate-bpart {
   from {-webkit-transform:rotate(0deg);}
   to {-webkit-transform:rotate(300deg);}
+}
+
+.collect-hints{
+    position: absolute;
+    color:#2f4558;
+    font-size: 20px;
+    font-family: San Francisco;
+    top:220px;
+    left:70px;
+    animation: disappear 0.5s ease-in;
+    animation-delay: 1s;
+
+}
+
+@keyframes disappear {
+    from {
+        top: 220px;
+        opacity: 1;
+    }
+    to {
+        top:150px;
+        opacity: 0;
+    }
 }

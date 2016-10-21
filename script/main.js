@@ -160,3 +160,27 @@ function collectionClick(){
     collectionpart.style.display = "block";
     hauntpart.style.display = "none";
 }
+
+/**
+ * ***************************************************************
+ * **************    A-frame click events    *********************
+ * ***************************************************************
+ */
+
+function ghost1(){
+    modelOnclick('ghost1model','Ghost Head +1');
+    collectPartChange("co-ghost", "left", "./imgs/collection/ghost1.png");
+}
+
+function vampire1(){
+    collectPartChange("co-vampire", "left", "./imgs/collection/vampire1.png");
+}
+
+var once = true;
+function modelOnclick(id,words){
+    if(once){
+        var myModel = getId(id);
+        myModel.innerHTML += '<div class="collect-hints">'+ words +'</div>';
+        once = false;
+        }
+    }
