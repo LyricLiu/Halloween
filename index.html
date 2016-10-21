@@ -8,38 +8,28 @@
     <meta name="description" content="360&deg; Image Gallery - A-Frame">
     <script src="./third-party/aframe.min.js"></script>
     <script src="./third-party/aframe-extras.loaders.min.js"></script>
-    <script src="https://raw.githubusercontent.com/argonjs/argon/master/dist/argon.min.js"></script>
+    <script src="./third-party/argon.min.js"></script>
     <script src="./third-party/build.js"></script>
     <script src="./third-party/CSS3DArgonRenderer.js"></script>
     <script src="./third-party/CSS3DArgonHUD.js"></script>
     <script src="./third-party/aframe-look-at-component.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div id="navigator">
         <span id="gtmap" onclick="gtmapClick()"></span>
         <span id="haunt" onclick="hauntClick()"></span>
         <span id="collection" onclick="collectionClick()"></span>
     </div>
-<!-- GT map module -->
+    <!-- GT map module -->
     <div id="map">
         <div id="map-header"></div>
         <div id="map-container">
-            <div id="urhere" class="points" style="top: 72px; left: 70px;">
-                <div id="map-module">
-                    <div id="map1"></div>
-                    <div id="map2"></div>
-                    <div id="map3"></div>
-                    <div id="map4"></div>
-                    <div id="map5"></div>
-                    <div id="map6"></div>
-                    <div id="map7"></div>
-                    <div id="map8"></div>
-                </div>
-            </div>
+            <div id="urhere" class="points" style="top: 72px; left: 70px;"></div>
         </div>
     </div>
-<!-- collection module -->
+    <!-- collection module -->
     <div id="collectionpart">
         <div id="collection-header"></div>
         <div id="co-display">
@@ -70,7 +60,7 @@
             </div>
         </div>
     </div>
-<!-- Haunt module -->
+    <!-- Haunt module -->
     <div id="hauntpart">
         <img id="cursor-inner" class="cursorE" src="./imgs/cursor/cursor-inner.png"></img>
         <img id="cursor-ring" class="cursorE" src="./imgs/cursor/cursor-ring.png"></img>
@@ -125,7 +115,7 @@
             </ar-geopose>
 
             <ar-geopose id="ghost1" lla=" -84.404147 33.780840" userposition="true" userotation="false">
-                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0" onclick="ghost1()">
+                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="4000"></a-animation>
                     <a-animation attribute="position" repeat="indefinite" to="0 1 0" dur="4000"></a-animation>
                     <a-animation attribute="visible" begin="click" to="false" dur="1000"></a-animation>
@@ -175,16 +165,13 @@
             </ar-geopose>
             <ar-camera>
                 <a-cursor id="cursor" scale="1 1 1" material="color:#0c142a; opacity:0.1">
-            <a-image src="./imgs/cursor/cursor-shot.png" scale="0.15 0.15 0.15"></a-image>
-                <a-animation begin="click" easing="ease-in" attribute="scale"
-                   fill="backwards" from="0.1 0.1 0.1" to="1.0 1.0 1.0" dur="300"></a-animation>
-                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                   from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
-            </a-cursor>
+                    <a-image src="./imgs/cursor/cursor-shot.png" scale="0.15 0.15 0.15"></a-image>
+                    <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1.0 1.0 1.0" dur="300"></a-animation>
+                    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+                </a-cursor>
             </ar-camera>
         </ar-scene>
     </div>
-    <script src="./script/storage.js"></script>
     <script src="./script/main.js"></script>
 </body>
 

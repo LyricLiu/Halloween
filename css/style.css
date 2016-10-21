@@ -79,15 +79,21 @@
 .points {
     border-radius: 50%;
     position: absolute;
-    z-index: 665;/*******************?????????????????************************/
+    z-index: 665;
 }
 
 #urhere {
-    width: 23px;
-    height: 23px;
-    background: url(../imgs/urhere.png);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dbc593;
+    border: 6px solid #d19923;
     animation: urhere-flash 1.5s infinite ease-in-out alternate;
     box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.2);
+}
+
+#urhere[gps-error] {
+    background: #f00;
 }
 
 .points-ghosts {
@@ -129,85 +135,6 @@
     }
 }
 
-#map1{
-    position: absolute;
-    background: url(../imgs/map/map1.png);
-    width: 228px;
-    height: 114px;
-    opacity: 0.5;
-    left:-20px;
-    top:-28px;
-}
-
-#map2{
-    position: absolute;
-    background: url(../imgs/map/map2.png);
-    width: 190px;
-    height: 239px;
-    opacity: 0.5;
-    top:46px;
-    left:-32px;
-}
-
-#map3{
-    position: absolute;
-    background: url(../imgs/map/map3.png);
-    width: 163px;
-    height: 228px;
-    opacity: 0.5;
-    top:107px;
-    left:113px;
-}
-
-#map4{
-    position: absolute;
-    background: url(../imgs/map/map4.png);
-    width: 180px;
-    height: 179px;
-    opacity: 0.5;
-    top:-29px;
-    left:243px;
-}
-
-#map5{
-    position: absolute;
-    background: url(../imgs/map/map5.png);
-    width: 152px;
-    height: 168px;
-    opacity: 0.5;
-    top:-18px;
-    left:433px;
-}
-
-#map6{
-    position: absolute;
-    background: url(../imgs/map/map6.png);
-    width: 196px;
-    height: 195px;
-    opacity: 0.5;
-    top:106px;
-    left:243px;
-}
-
-#map7{
-    position: absolute;
-    background: url(../imgs/map/map7.png);
-    width: 152px;
-    height: 272px;
-    opacity: 0.5;
-    top:160px;
-    left:433px;
-}
-
-#map8{
-    position: absolute;
-    background: url(../imgs/map/map8.png);
-    width: 158px;
-    height: 131px;
-    opacity: 0.5;
-    top:279px;
-    left:319px;
-}
 /*************collection**************/
 
 #collectionpart{
