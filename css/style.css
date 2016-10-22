@@ -143,6 +143,26 @@
     display: none;/*change here*/
 }
 
+#zoom{
+    display: none;
+    width:375px;
+    height:667px;
+    z-index: 66666;
+    position: fixed;
+    top:-40px;
+    left:0;
+    overflow: hidden;
+}
+
+#zoom-button{
+    position: fixed;
+    width:43px;
+    height:43px;
+    background: url(../imgs/zoom/button-zoom.png);
+    left:10px;
+    top:30px;
+}
+
 #collection-header{
     position: fixed;
     top: 0;
@@ -183,6 +203,7 @@
     position: absolute;
     width:76px;
     height:120px;
+    z-index: 665;
 }
 
 #co-witch span:nth-child(1){

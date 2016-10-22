@@ -30,33 +30,36 @@
         </div>
     </div>
     <!-- collection module -->
+    <div id="zoom">
+            <div id="zoom-button" onclick="zoomDelete()"></div>
+    </div>
     <div id="collectionpart">
         <div id="collection-header"></div>
         <div id="co-display">
             <div id="co-witch" class="co-bar">
                 <span class="co-left"></span>
                 <span class="co-mid"></span>
-                <span class="co-right"></span>
+                <span class="co-right" onclick="zoomCollection('witch')"></span>
             </div>
             <div id="co-skeleton" class="co-bar">
                 <span class="co-left"></span>
                 <span class="co-mid"></span>
-                <span class="co-right"></span>
+                <span class="co-right" onclick="zoomCollection('skeleton')"></span>
             </div>
             <div id="co-vampire" class="co-bar">
                 <span class="co-left"></span>
                 <span class="co-mid"></span>
-                <span class="co-right"></span>
+                <span class="co-right" onclick="zoomCollection('vampire')"></span>
             </div>
             <div id="co-ghost" class="co-bar">
                 <span class="co-left"></span>
                 <span class="co-mid"></span>
-                <span class="co-right"></span>
+                <span class="co-right" onclick="zoomCollection('ghost')"></span>
             </div>
             <div id="co-zombie" class="co-bar">
                 <span class="co-left"></span>
                 <span class="co-mid"></span>
-                <span class="co-right"></span>
+                <span class="co-right" onclick="zoomCollection('zombie')"></span>
             </div>
         </div>
     </div>
@@ -93,57 +96,57 @@
             </a-assets>
             <!--###-->
             <ar-geopose id="skeleton1" lla=" -84.389913 33.777300" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #skeleton1-model; mtl: #skeleton1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #skeleton1-model; mtl: #skeleton1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0" onclick="setGhost('skeleton1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                     <a-animation attribute="position" repeat="indefinite" to="0 1 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="skeleton2" lla=" -84.392356 33.778530" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #skeleton2-model; mtl: #skeleton2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #skeleton2-model; mtl: #skeleton2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('skeleton2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="zombie1" lla=" -84.396542 33.773458" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #zombie1-model; mtl: #zombie1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #zombie1-model; mtl: #zombie1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('zombie1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="zombie2" lla=" -84.395443 33.772072" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #zombie2-model; mtl: #zombie2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #zombie2-model; mtl: #zombie2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('zombie2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
 
             <ar-geopose id="ghost1" lla=" -84.404147 33.780840" userposition="true" userotation="false">
-                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0">
+                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0" onclick="setGhost('ghost1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="4000"></a-animation>
                     <a-animation attribute="position" repeat="indefinite" to="0 1 0" dur="4000"></a-animation>
-                    <a-animation attribute="visible" begin="click" to="false" dur="1000"></a-animation>
+                    <!--a-animation attribute="visible" begin="click" to="false" dur="1000"></a-animation-->
                 </a-entity>
             </ar-geopose>
 
             <ar-geopose id="ghost2" lla=" -84.403998 33.777093" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #ghost2-model; mtl: #ghost2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #ghost2-model; mtl: #ghost2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('ghost2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="vampire1" lla=" -84.396597 33.775072" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #vampire1-model; mtl: #vampire1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #vampire1-model; mtl: #vampire1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('vampire1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="vampire2" lla=" -84.394617 33.775352" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #vampire2-model; mtl: #vampire2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #vampire2-model; mtl: #vampire2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('vampire2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="witch1" lla=" -84.398049 33.773817" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #witch1-model; mtl: #witch1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #witch1-model; mtl: #witch1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('witch1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose id="witch2" lla=" -84.397404 33.774044" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #witch2-model; mtl: #witch2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0">
+                <a-entity obj-model="obj: #witch2-model; mtl: #witch2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('witch2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>

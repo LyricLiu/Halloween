@@ -125,6 +125,23 @@ function collectPartChange(kindId, part, status) {
     }
 }
 
+/**
+ * Zoom collection part
+ * 
+ * @param {any} id the ID of the ghost you want to change
+ */
+
+ function zoomCollection(pic){
+    var zoom = getId('zoom');
+    zoom.style.display = "block";
+    zoom.style.background = 'url(./imgs/zoom/' + pic + '-zoom.png)';
+ }
+
+ function zoomDelete(){
+    var zoom = getId('zoom');
+    zoom.style.display = "none";
+ }
+
 /********** GPS Module **********/
 
 var urhere = getId('urhere');
@@ -200,3 +217,33 @@ function setGhost(id, status) {
     }
     storage.set('ghostData', JSON.stringify(ghostData));
 }
+
+
+/*
+var ghost2 = document.getElementById("ghost2");
+ghost2.addEventListener("click", setGhost('ghost2', 'found'), false);
+
+var witch1 = document.getElementById("witch1");
+witch1.addEventListener("click", setGhost('witch1', 'found'), false);
+
+var witch2 = document.getElementById("witch2");
+witch2.addEventListener("click", setGhost('witch2', 'found'), false);
+
+var skeleton1 = document.getElementById("skeleton1");
+skeleton1.addEventListener("click", setGhost('skeleton1', 'found'), false);
+
+var skeleton2 = document.getElementById("skeleton2");
+skeleton2.addEventListener("click", setGhost('skeleton2', 'found'), false);
+
+var vampire1 = document.getElementById("vampire1");
+vampire1.addEventListener("click", setGhost('vampire1', 'found'), false);
+
+var vampire2 = document.getElementById("vampire2");
+vampire2.addEventListener("click", setGhost('vampire2', 'found'), false);
+
+var zombie1 = document.getElementById("zombie1");
+zombie1.addEventListener("click", setGhost('zombie1', 'found'), false);
+
+var zombie2 = document.getElementById("zombie2");
+zombie2.addEventListener("click", setGhost('zombie2', 'found'), false);
+*/
