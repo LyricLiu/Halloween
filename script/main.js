@@ -126,6 +126,8 @@ function collectPartChange(kindId, part, status) {
             thingToChange.setAttribute('found', 'found');
             if (things[0].getAttribute('found') == things[1].getAttribute('found')) {
                 collectPartChange(kindId, 3, 'on');
+                var Character = getId(kindId);
+                Character.setAttribute('visible','true');
             }
         } else {
             thingToChange.removeAttribute('found');
@@ -225,34 +227,15 @@ function setGhost(id, status) {
         throw new Error('Status ' + status + ' not specificed');
     }
     storage.set('ghostData', JSON.stringify(ghostData));
+    curPoint.setAttribute('visible','false');
 }
 
+function addWord(id){
+    var parent1 = document.getElementById(id)
+    var a = document.createElement('a-sphere');
+    a.setAttribute('color', 'yellow');
+    a.setAttribute('position', '1 1.75 0.5');
+    a.setAttribute('radius', '3');
+    parent1.appendChild(a);
+}
 
-/*
-var ghost2 = document.getElementById("ghost2");
-ghost2.addEventListener("click", setGhost('ghost2', 'found'), false);
-
-var witch1 = document.getElementById("witch1");
-witch1.addEventListener("click", setGhost('witch1', 'found'), false);
-
-var witch2 = document.getElementById("witch2");
-witch2.addEventListener("click", setGhost('witch2', 'found'), false);
-
-var skeleton1 = document.getElementById("skeleton1");
-skeleton1.addEventListener("click", setGhost('skeleton1', 'found'), false);
-
-var skeleton2 = document.getElementById("skeleton2");
-skeleton2.addEventListener("click", setGhost('skeleton2', 'found'), false);
-
-var vampire1 = document.getElementById("vampire1");
-vampire1.addEventListener("click", setGhost('vampire1', 'found'), false);
-
-var vampire2 = document.getElementById("vampire2");
-vampire2.addEventListener("click", setGhost('vampire2', 'found'), false);
-
-var zombie1 = document.getElementById("zombie1");
-zombie1.addEventListener("click", setGhost('zombie1', 'found'), false);
-
-var zombie2 = document.getElementById("zombie2");
-zombie2.addEventListener("click", setGhost('zombie2', 'found'), false);
-*/

@@ -152,20 +152,21 @@
             </ar-geopose>
             <!--pumpkin-->
             <ar-geopose class="ItemCollect" id="pumpkin1" lla=" -84.396162 33.779711" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0">
+                <a-entity id="pumpkin-model1" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model1')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose class="ItemCollect" id="pumpkin2" lla=" -84.400934 33.777090" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0">
+                <a-entity id="pumpkin-model2" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model2')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <ar-geopose class="ItemCollect" id="pumpkin3" lla=" -84.390928 33.771465" userposition="true" userotation="false">
-                <a-entity obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0">
+                <a-entity id="pumpkin-model3" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model3')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
+
             <!--Character-->
             <ar-geopose class="CharacterCollect" id="skeleton" lla=" -84.396413 33.776858" userposition="true" userotation="true">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/skeleton.obj); mtl: url(./3Dmodel/ItemModel/skeleton.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
@@ -175,7 +176,7 @@
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/zombie.obj); mtl: url(./3Dmodel/ItemModel/zombie.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="CharacterCollect" id="ghost" lla=" -84.391587 33.772459" userposition="true" userotation="true">
+            <ar-geopose class="CharacterCollect" id="ghost" lla=" -84.391587 33.772459" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/ghost.obj); mtl: url(./3Dmodel/ItemModel/ghost.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
