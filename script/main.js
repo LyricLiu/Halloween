@@ -54,6 +54,15 @@ function renderGhost(myGhostData) {
     });
 }
 
+function renderCharacter(myGhostData){
+    var myMap = getId("CharacterCollect");
+    myGhostData.forEach(function (curVar) {
+        myMap.innerHTML += '<div class="character-icon" style="top: ' + curVar.pos[0] +
+            'px; left: ' + curVar.pos[1] +
+            'px></div>';
+    });
+}
+
 /**
  * Get ghost data via localStorage or ajax
  * 
@@ -64,7 +73,7 @@ function getGhostData(success) {
     // This is NOT a mistake
     if (!(myGhostData = storage.get('ghostData'))) {
         var myGhostDataArr = [];
-        var ghosts = document.getElementsByTagName('ar-geopose');
+        var ghosts = document.getElementsByClassName('ItemCollect');
         for (var i = 0; i < ghosts.length; i++) {
             var ghostGpsPos = ghosts[i].getAttribute('lla').trim().split(' ').map(function (a) {
                 return parseFloat(a)
