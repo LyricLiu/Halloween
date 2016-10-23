@@ -262,12 +262,11 @@ function setGhost(id, status) {
 
 function addWord(id) {
     var parent1 = document.getElementById(id)
-    var a = document.createElement('a-sphere');
-    a.setAttribute('color', 'yellow');
+    var a = document.createElement('a-text');
+    a.innerHTML = 'There was a picture in my phone of me sleeping. I live alone.';
+    a.setAttribute('color', '#0c142a');
     a.setAttribute('position', '1 1.75 0.5');
-    a.setAttribute('radius', '3');
     parent1.appendChild(a);
-    parent1.setAttribute('visible', 'false');
 }
 
 function clearcache(){
