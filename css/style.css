@@ -81,6 +81,7 @@
     width:21px;
     height:29px;
     background: url(../imgs/position-icon.png);
+    z-index:664;
 }
 
 .points {
