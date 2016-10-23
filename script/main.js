@@ -35,6 +35,11 @@ function getId(selector) {
     return document.getElementById(selector);
 }
 
+
+function getPointId(id) {
+    return getId('point-' + id);
+}
+
 /**
  * Draw the map accourding to the data
  * 
@@ -43,7 +48,7 @@ function getId(selector) {
 function renderGhost(myGhostData) {
     var myMap = getId('map-container');
     myGhostData.forEach(function (curVar, index, array) {
-        myMap.innerHTML += '<div id="' + curVar.id +
+        myMap.innerHTML += '<div id="point-' + curVar.id +
             '" class="points points-ghosts" style="top: ' + curVar.pos[0] +
             'px; left: ' + curVar.pos[1] +
             'px;" ghost-index="' + index +
@@ -54,7 +59,7 @@ function renderGhost(myGhostData) {
     });
 }
 
-function renderCharacter(myGhostData){
+function renderCharacter(myGhostData) {
     var myMap = getId("CharacterCollect");
     myGhostData.forEach(function (curVar) {
         myMap.innerHTML += '<div class="character-icon" style="top: ' + curVar.pos[0] +
@@ -110,18 +115,11 @@ function collectPartChange(kindId, part, status) {
     var father = getId('co-' + kindId);
     var things = father.getElementsByTagName('span');
     var thingToChange = things[part - 1];
-    var charOnPic = '';
+    var curGhost = getId(kindId + (part == 3 ? '' : part));
 
-    if (part == 1) {
-        charOnPic = '1';
-    } else if (part == 2) {
-        charOnPic = '2';
-    } else {
-        charOnPic = '';
-    }
-
-    thingToChange.style.background = 'url(./imgs/collection/' + kindId + charOnPic + (status == 'on' ? '' : 'b') + '.png)';
-    if (part !== 3) {
+    thingToChange.style.background = 'url(./imgs/collection/' + kindId + (part == 3 ? '' : part) + (status == 'on' ? '' : 'b') + '.png)';
+    if (part != 3) {
+        curGhost.setAttribute('should-be-discovered', (status == 'off' ? 'true' : 'false'));
         if (status == 'on') {
             thingToChange.setAttribute('found', 'found');
             if (things[0].getAttribute('found') == things[1].getAttribute('found')) {
@@ -133,6 +131,8 @@ function collectPartChange(kindId, part, status) {
             thingToChange.removeAttribute('found');
             collectPartChange(kindId, 3, 'off');
         }
+    } else {
+        curGhost.setAttribute('should-be-discovered', (status == 'on' ? 'true' : 'false'));
     }
 }
 
@@ -142,29 +142,58 @@ function collectPartChange(kindId, part, status) {
  * @param {any} id the ID of the ghost you want to change
  */
 
- function zoomCollection(pic){
+function zoomCollection(pic) {
     var zoom = getId('zoom');
     zoom.style.display = "block";
     zoom.style.background = 'url(./imgs/zoom/' + pic + '-zoom.png)';
- }
+}
 
- function zoomDelete(){
+function zoomDelete() {
     var zoom = getId('zoom');
     zoom.style.display = "none";
- }
+}
 
 /********** GPS Module **********/
 
 var urhere = getId('urhere');
 
-function calcDist() {}
+function calcDist(map1, map2) {
+    return Math.sqrt((map2[0] - map1[0]) * (map2[0] - map1[0]) + (map2[1] - map1[1]) * (map2[1] - map1[1]));
+}
+
+function displayNearest(mapPositon, limit) {
+    var distData = [];
+    var items = document.getElementsByTagName('ar-geopose');
+    for (var i = 1; i < items.length; i++) {
+        if (items[i].getAttribute('should-be-discovered') == 'true') {
+            var curGpsPos = items[i].getAttribute('lla').trim().split(' ').map(function (a) {
+                return parseFloat(a);
+            });
+            var curMapPos = GPSCalc.GPSToMap(curGpsPos, 24);
+            var curDistData = {
+                id: items[i].getAttribute('id'),
+                dist: calcDist(mapPositon, curMapPos)
+            };
+            if (curDistData <= limit) {
+                items[i].setAttribute('visible', 'true');
+            } else {
+                items[i].setAttribute('visible', 'false');
+            }
+            distData.push(curDistData);
+        } else {
+            items[i].setAttribute('visible', 'false');
+        }
+    }
+
+    console.log(distData);
+}
 
 function gpsSuccess(position) {
     urhere.removeAttribute('gps-error');
     var mapPositon = GPSCalc.GPSToMap([position.coords.longitude, position.coords.latitude], 24);
     urhere.style.top = mapPositon[0] + 'px';
     urhere.style.left = mapPositon[1] + 'px';
-    findNearest(mapPositon);
+    displayNearest(mapPositon, 23);
 }
 
 function gpsError() {
@@ -198,11 +227,6 @@ function collectionClick() {
     hauntpart.style.display = "none";
 }
 
-/**
- * ***************************************************************
- * **************    A-frame click events    *********************
- * ***************************************************************
- */
 
 /**
  * Change the status of particular ghost
@@ -211,7 +235,9 @@ function collectionClick() {
  * @param {String} status the status you want to change to
  */
 function setGhost(id, status) {
-    var curPoint = document.getElementById(id);
+    var curPoint = getPointId(id);
+    var curGhost = getId(id);
+    console.log(getPointId(id));
     var kindId = id.slice(0, -1);
     var kindIndex = id[id.length - 1] - '0';
     var index = parseInt(curPoint.getAttribute('ghost-index'));
@@ -227,15 +253,16 @@ function setGhost(id, status) {
         throw new Error('Status ' + status + ' not specificed');
     }
     storage.set('ghostData', JSON.stringify(ghostData));
-    curPoint.setAttribute('visible','false');
+    curPoint.setAttribute('visible', 'false');
 }
 
-function addWord(id){
+function addWord(id) {
     var parent1 = document.getElementById(id)
     var a = document.createElement('a-sphere');
     a.setAttribute('color', 'yellow');
     a.setAttribute('position', '1 1.75 0.5');
     a.setAttribute('radius', '3');
     parent1.appendChild(a);
+    parent1.setAttribute('visible', 'false');
 }
 

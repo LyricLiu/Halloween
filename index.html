@@ -31,7 +31,7 @@
     </div>
     <!-- collection module -->
     <div id="zoom">
-            <div id="zoom-button" onclick="zoomDelete()"></div>
+        <div id="zoom-button" onclick="zoomDelete()"></div>
     </div>
     <div id="collectionpart">
         <div id="collection-header"></div>
@@ -95,96 +95,100 @@
                 <a-asset-item id="pumpkinm-model" src="./3Dmodel/ItemModel/pumpkin.mtl"></a-asset-item>
             </a-assets>
             <!--###-->
-            <ar-geopose class="ItemCollect" id="skeleton1" lla=" -84.389913 33.777300" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="skeleton1" lla=" -84.389913 33.777300" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #skeleton1-model; mtl: #skeleton1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0" onclick="setGhost('skeleton1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                     <a-animation attribute="position" repeat="indefinite" to="0 1 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="skeleton2" lla=" -84.392356 33.778530" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="skeleton2" lla=" -84.392356 33.778530" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #skeleton2-model; mtl: #skeleton2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('skeleton2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="zombie1" lla=" -84.396542 33.773458" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="zombie1" lla=" -84.396542 33.773458" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #zombie1-model; mtl: #zombie1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('zombie1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="zombie2" lla=" -84.395443 33.772072" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="zombie2" lla=" -84.395443 33.772072" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #zombie2-model; mtl: #zombie2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('zombie2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
 
-            <ar-geopose class="ItemCollect" id="ghost1" lla=" -84.404147 33.780840" userposition="true" userotation="false">
-                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0" onclick="setGhost('ghost1', 'found')">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="ghost1" lla=" -84.404147 33.780840" userposition="true" userotation="false" visible="true">
+                <a-entity id="ghost1model" obj-model="obj: #ghost1-model; mtl: #ghost1m-model" scale="1 1 1" position="0 0 0" rotation="0 0 0"
+                    onclick="setGhost('ghost1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="4000"></a-animation>
                     <a-animation attribute="position" repeat="indefinite" to="0 1 0" dur="4000"></a-animation>
                     <!--a-animation attribute="visible" begin="click" to="false" dur="1000"></a-animation-->
                 </a-entity>
             </ar-geopose>
 
-            <ar-geopose class="ItemCollect" id="ghost2" lla=" -84.403998 33.777093" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="ghost2" lla=" -84.403998 33.777093" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #ghost2-model; mtl: #ghost2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('ghost2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="vampire1" lla=" -84.396597 33.775072" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="vampire1" lla=" -84.396597 33.775072" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #vampire1-model; mtl: #vampire1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('vampire1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="vampire2" lla=" -84.394617 33.775352" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="vampire2" lla=" -84.394617 33.775352" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #vampire2-model; mtl: #vampire2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('vampire2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="witch1" lla=" -84.398049 33.773817" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="witch1" lla=" -84.398049 33.773817" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #witch1-model; mtl: #witch1m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('witch1', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="witch2" lla=" -84.397404 33.774044" userposition="true" userotation="false">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="witch2" lla=" -84.397404 33.774044" userposition="true" userotation="false">
                 <a-entity obj-model="obj: #witch2-model; mtl: #witch2m-model" scale="1 1 1" position="0 1 10" rotation="0 0 0" onclick="setGhost('witch2', 'found')">
                     <a-animation attribute="rotation" repeat="indefinite" easing="linear" to="0 360 0" dur="3000"></a-animation>
                 </a-entity>
             </ar-geopose>
             <!--pumpkin-->
-            <ar-geopose class="ItemCollect" id="pumpkin1" lla=" -84.396162 33.779711" userposition="true" userotation="false">
-                <a-entity id="pumpkin-model1" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model1')">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="pumpkin1" lla=" -84.396162 33.779711" userposition="true" userotation="false">
+                <a-entity id="pumpkin-model1" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0"
+                    onclick="addWord('pumpkin-model1')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="pumpkin2" lla=" -84.400934 33.777090" userposition="true" userotation="false">
-                <a-entity id="pumpkin-model2" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model2')">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="pumpkin2" lla=" -84.400934 33.777090" userposition="true" userotation="false">
+                <a-entity id="pumpkin-model2" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0"
+                    onclick="addWord('pumpkin-model2')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="ItemCollect" id="pumpkin3" lla=" -84.390928 33.771465" userposition="true" userotation="false">
-                <a-entity id="pumpkin-model3" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0" onclick="addWord('pumpkin-model3')">
+            <ar-geopose should-be-discovered="true" class="ItemCollect" id="pumpkin3" lla=" -84.390928 33.771465" userposition="true" userotation="false">
+                <a-entity id="pumpkin-model3" obj-model="obj: #pumpkin-model; mtl: #pumpkinm-model" scale="1 1 1" position="0 1 10" rotation="0 -90 0"
+                    onclick="addWord('pumpkin-model3')">
                     <a-animation attribute="rotation" begin="click" to="0 0 0" dur="2000"></a-animation>
                 </a-entity>
             </ar-geopose>
 
             <!--Character-->
-            <ar-geopose class="CharacterCollect" id="skeleton" lla=" -84.396413 33.776858" userposition="true" userotation="true">
+            <ar-geopose should-be-discovered="false" class="CharacterCollect" id="skeleton" lla=" -84.396413 33.776858" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/skeleton.obj); mtl: url(./3Dmodel/ItemModel/skeleton.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="CharacterCollect" id="zombie" lla=" -84.394085 33.773988" userposition="true" userotation="true">
+            <ar-geopose should-be-discovered="false" class="CharacterCollect" id="zombie" lla=" -84.394085 33.773988" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/zombie.obj); mtl: url(./3Dmodel/ItemModel/zombie.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="CharacterCollect" id="ghost" lla=" -84.391587 33.772459" userposition="true" userotation="true" visible="false">
+            <ar-geopose should-be-discovered="false" class="CharacterCollect" id="ghost" lla=" -84.391587 33.772459" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/ghost.obj); mtl: url(./3Dmodel/ItemModel/ghost.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="CharacterCollect" id="vampire" lla=" -84.394532 33.771842" userposition="true" userotation="true">
+            <ar-geopose should-be-discovered="false" class="CharacterCollect" id="vampire" lla=" -84.394532 33.771842" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/vampire.obj); mtl: url(./3Dmodel/ItemModel/vampire.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
-            <ar-geopose class="CharacterCollect" id="witch" lla=" -84.396373 33.775445" userposition="true" userotation="true">
+            <ar-geopose should-be-discovered="false" class="CharacterCollect" id="witch" lla=" -84.396373 33.775445" userposition="true" userotation="true" visible="false">
                 <a-entity obj-model="obj: url(./3Dmodel/ItemModel/witch.obj); mtl: url(./3Dmodel/ItemModel/witch.mtl)" scale="1 1 1" position="0 0 0" rotation="150 30 0">
                 </a-entity>
             </ar-geopose>
