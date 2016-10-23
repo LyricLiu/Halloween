@@ -61,9 +61,13 @@ function renderGhost(myGhostData) {
 
 function renderCharacter(id) {
     var myMap = getId('map-container');
-    var curVar = 
-    myMap.innerHTML += '<div class="character-icon" style="top: ' + curVar.pos[0] +
-            'px; left: ' + curVar.pos[1] +
+    var character = getId(id);
+    var characterGpsPos = character.getAttribute('lla').trim().split(' ').map(function (a) {
+                return parseFloat(a)
+            });
+    var characterPos = GPSCalc.GPSToMap(characterGpsPos, 10);
+    myMap.innerHTML += '<div class="character-icon" style="top: ' + characterPos[0] +
+            'px; left: ' + characterPos[1] +
             'px></div>';
 }
 
@@ -125,6 +129,7 @@ function collectPartChange(kindId, part, status) {
                 collectPartChange(kindId, 3, 'on');
                 var Character = getId(kindId);
                 Character.setAttribute('visible','true');
+                renderCharacter(kindId);
             }
         } else {
             thingToChange.removeAttribute('found');

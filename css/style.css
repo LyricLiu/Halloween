@@ -76,6 +76,13 @@
     height: 493px;
 }
 
+.character-icon{
+    position: absolute;
+    width:21px;
+    height:29px;
+    background: url(../imgs/position-icon.png);
+}
+
 .points {
     border-radius: 50%;
     position: absolute;
