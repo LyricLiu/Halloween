@@ -59,13 +59,12 @@ function renderGhost(myGhostData) {
     });
 }
 
-function renderCharacter(myGhostData) {
-    var myMap = getId("CharacterCollect");
-    myGhostData.forEach(function (curVar) {
-        myMap.innerHTML += '<div class="character-icon" style="top: ' + curVar.pos[0] +
+function renderCharacter(id) {
+    var myMap = getId('map-container');
+    var curVar = 
+    myMap.innerHTML += '<div class="character-icon" style="top: ' + curVar.pos[0] +
             'px; left: ' + curVar.pos[1] +
             'px></div>';
-    });
 }
 
 /**
@@ -174,8 +173,7 @@ function displayNearest(mapPositon, limit) {
                 id: items[i].getAttribute('id'),
                 dist: calcDist(mapPositon, curMapPos)
             };
-            if (curDistData <= limit) {
-                console.log('hello');
+            if (curDistData.dist <= limit) {
                 items[i].setAttribute('visible', 'true');
             } else {
                 items[i].setAttribute('visible', 'false');
