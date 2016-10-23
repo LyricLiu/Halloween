@@ -164,7 +164,7 @@ function calcDist(map1, map2) {
 function displayNearest(mapPositon, limit) {
     var distData = [];
     var items = document.getElementsByTagName('ar-geopose');
-    for (var i = 1; i < items.length; i++) {
+    for (var i = 0; i < items.length; i++) {
         if (items[i].getAttribute('should-be-discovered') == 'true') {
             var curGpsPos = items[i].getAttribute('lla').trim().split(' ').map(function (a) {
                 return parseFloat(a);
@@ -175,6 +175,7 @@ function displayNearest(mapPositon, limit) {
                 dist: calcDist(mapPositon, curMapPos)
             };
             if (curDistData <= limit) {
+                console.log('hello');
                 items[i].setAttribute('visible', 'true');
             } else {
                 items[i].setAttribute('visible', 'false');
