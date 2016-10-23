@@ -185,7 +185,7 @@ function displayNearest(mapPositon, limit) {
         }
     }
 
-    console.log(distData);
+    console.table(distData);
 }
 
 function gpsSuccess(position) {
@@ -264,5 +264,9 @@ function addWord(id) {
     a.setAttribute('radius', '3');
     parent1.appendChild(a);
     parent1.setAttribute('visible', 'false');
+}
+
+function clearcache(){
+    localStorage.clear();
 }
 
