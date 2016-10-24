@@ -197,7 +197,7 @@ function gpsSuccess(position) {
     var mapPositon = GPSCalc.GPSToMap([position.coords.longitude, position.coords.latitude], 24);
     urhere.style.top = mapPositon[0] + 'px';
     urhere.style.left = mapPositon[1] + 'px';
-    displayNearest(mapPositon, 100);
+    displayNearest(mapPositon, 20);
 }
 
 function gpsError() {
