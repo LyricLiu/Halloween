@@ -112,7 +112,7 @@
 }
 
 .points-ghosts[ghost-found] {
-    background: #2f4356;
+    background: #238b9b;
     animation: ghosts-found-flash 1s infinite ease-in-out alternate;
 }
 
