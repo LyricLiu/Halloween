@@ -93,6 +93,16 @@
                 <a-asset-item id="witch2m-model" src="./3Dmodel/ItemModel/witch2.mtl"></a-asset-item>
                 <a-asset-item id="pumpkin-model" src="./3Dmodel/ItemModel/pumpkin.obj"></a-asset-item>
                 <a-asset-item id="pumpkinm-model" src="./3Dmodel/ItemModel/pumpkin.mtl"></a-asset-item>
+                <a-asset-item id="skeleton-model" src="./3Dmodel/ItemModel/skeleton.obj"></a-asset-item>
+                <a-asset-item id="skeletonm-model" src="./3Dmodel/ItemModel/skeleton.mtl"></a-asset-item>
+                <a-asset-item id="zombie-model" src="./3Dmodel/ItemModel/zombie.obj"></a-asset-item>
+                <a-asset-item id="zombiem-model" src="./3Dmodel/ItemModel/zombie.mtl"></a-asset-item>
+                <a-asset-item id="ghost-model" src="./3Dmodel/ItemModel/ghost.obj"></a-asset-item>
+                <a-asset-item id="ghostm-model" src="./3Dmodel/ItemModel/ghost.mtl"></a-asset-item>
+                <a-asset-item id="vampire-model" src="./3Dmodel/ItemModel/vampire.obj"></a-asset-item>
+                <a-asset-item id="vampirem-model" src="./3Dmodel/ItemModel/vampire.mtl"></a-asset-item>
+                <a-asset-item id="witch-model" src="./3Dmodel/ItemModel/witch.obj"></a-asset-item>
+                <a-asset-item id="witchm-model" src="./3Dmodel/ItemModel/witch.mtl"></a-asset-item>
             </a-assets>
             <!--###-->
             <ar-geopose should-be-discovered="true" class="ItemCollect" id="skeleton1" lla=" -84.389913 33.777300" userposition="true" userotation="false">
@@ -180,23 +190,23 @@
 
             <!--Character-->
             <ar-geopose should-be-discovered="false" class="CharacterCollect" id="skeleton" lla=" -84.396413 33.776858" userposition="true" userotation="true" visible="false">
-                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/skeleton.obj); mtl: url(./3Dmodel/ItemModel/skeleton.mtl)" scale="1 1 1" position="0 300 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #skeleton-model; mtl: #skeletonm-model" scale="1 1 1" position="0 300 0" rotation="0 0 0">
                 </a-entity>
             </ar-geopose>
             <ar-geopose should-be-discovered="false" class="CharacterCollect" id="zombie" lla=" -84.394085 33.773988" userposition="true" userotation="true" visible="false">
-                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/zombie.obj); mtl: url(./3Dmodel/ItemModel/zombie.mtl)" scale="1 1 1" position="0 300 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #zombie-model; mtl: #zombiem-model" scale="1 1 1" position="0 300 0" rotation="0 0 0">
                 </a-entity>
             </ar-geopose>
             <ar-geopose should-be-discovered="false" class="CharacterCollect" id="ghost" lla=" -84.391587 33.772459" userposition="true" userotation="true" visible="false">
-                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/ghost.obj); mtl: url(./3Dmodel/ItemModel/ghost.mtl)" scale="1 1 1" position="0 300 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #ghost-model; mtl: #ghostm-model" scale="1 1 1" position="0 300 0" rotation="0 0 0">
                 </a-entity>
             </ar-geopose>
             <ar-geopose should-be-discovered="false" class="CharacterCollect" id="vampire" lla=" -84.394532 33.771842" userposition="true" userotation="true" visible="false">
-                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/vampire.obj); mtl: url(./3Dmodel/ItemModel/vampire.mtl)" scale="1 1 1" position="0 300 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #vampire-model; mtl: #vampirem-model" scale="1 1 1" position="0 300 0" rotation="0 0 0">
                 </a-entity>
             </ar-geopose>
             <ar-geopose should-be-discovered="false" class="CharacterCollect" id="witch" lla=" -84.396373 33.775445" userposition="true" userotation="true" visible="false">
-                <a-entity obj-model="obj: url(./3Dmodel/ItemModel/witch.obj); mtl: url(./3Dmodel/ItemModel/witch.mtl)" scale="1 1 1" position="0 300 0" rotation="0 0 0">
+                <a-entity obj-model="obj: #witch-model; mtl: #witchm-model" scale="1 1 1" position="0 300 0" rotation="0 0 0">
                 </a-entity>
             </ar-geopose>
 
