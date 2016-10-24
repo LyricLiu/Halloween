@@ -101,7 +101,7 @@
 }
 
 #urhere[gps-error] {
-    background: #f00;
+    background: #f1aa55;
 }
 
 .points-ghosts {
@@ -112,7 +112,7 @@
 }
 
 .points-ghosts[ghost-found] {
-    background: #0f0;
+    background: #2f4356;
     animation: ghosts-found-flash 1s infinite ease-in-out alternate;
 }
 
@@ -136,10 +136,10 @@
 
 @keyframes ghosts-found-flash {
     from {
-        box-shadow: 0 0 8px 5px rgba(0, 255, 0, 0.8);
+        box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.02);
     }
     to {
-        box-shadow: 0 0 8px 2px rgba(0, 255, 0, 0.2);
+        box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.01);
     }
 }
 
