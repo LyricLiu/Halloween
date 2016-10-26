@@ -78,7 +78,6 @@ function renderCharacter(id) {
  */
 function getGhostData(success) {
     var myGhostData = null;
-    // This is NOT a mistake
     if (!(myGhostData = storage.get('ghostData'))) {
         var myGhostDataArr = [];
         var ghosts = document.getElementsByClassName('ItemCollect');
@@ -197,7 +196,7 @@ function gpsSuccess(position) {
     var mapPositon = GPSCalc.GPSToMap([position.coords.longitude, position.coords.latitude], 24);
     urhere.style.top = mapPositon[0] + 'px';
     urhere.style.left = mapPositon[1] + 'px';
-    displayNearest(mapPositon, 50);
+    displayNearest(mapPositon, 100);
 }
 
 function gpsError() {
